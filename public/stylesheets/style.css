@@ -44,3 +44,12 @@ header{
 .link{
     text-decoration: none;
 }
+
+.counter-container{
+    counter-reset: products;
+}
+
+.row-counter::before{
+    content: counter(products);
+    counter-increment: products;
+}
