@@ -18,9 +18,15 @@
         <input type="number" class="form-control" value="{{product.price}}" name="price" ></div>
       <div class="mb-3">
         <label class="form-label">Image</label>
-        <img src="/images/product-images/{{product._id}}.jpg " class="view-product-img" alt="">
-        <input type="file" class="form-control" name="image">
+        <img src="/images/product-images/{{product._id}}.jpg " class="view-product-img" id="proImg" alt="">
+        <input type="file" class="form-control" onchange="viewImg(event)"  name="image">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </div>
+
+<script>
+  function viewImg(event){
+    document.getElementById('proImg').src=URL.createObjectURL(event.target.files[0])
+  }
+</script>

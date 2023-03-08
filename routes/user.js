@@ -33,7 +33,9 @@ router.get('/signup', (req,res)=>{
 
 router.post('/signup',(req,res)=>{
   userHelper.doSignup(req.body).then((response)=>{
-
+     req.session.loggedin= true
+     req.session.user = response
+    res.redirect('/')
   })
 })
 
@@ -60,7 +62,18 @@ router.get('/logout', (req,res)=>{
 
 
 router.get('/cart',verifyLogin, (req,res)=>{
-  res.render('user/cart',{user:req.session.user})
+  userHelper.getCartProducts(req.session.user._id).then((result)=>{
+    console.log(result)
+    res.render('user/cart',{user:req.session.user, cartItems:result})
+  })
+ 
+})
+
+
+router.get('/add-to-cart/:id',verifyLogin, (req,res)=>{
+  userHelper. addToCart(req.params.id,req.session.user._id).then(()=>{
+    res.redirect('/')
+  })
 })
 
 module.exports = router;
