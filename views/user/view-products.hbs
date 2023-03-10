@@ -7,9 +7,11 @@
                 <h5 class="card-title">{{this.name}}</h5>
                 <h6 class="text-secondary">{{this.category}}</h6>
                 <p class="card-text">{{this.description}}.</p>
-                <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">{{this.price}}₹</a>
+                <h6 class="text-secondary">{{this.price}}</h6>
+                <button class="btn btn-primary" onclick="addToCart('{{this._id}}')">Add To Cart</button>
             </div>
         </div>
         {{/each}}
     </div>
 </div>
+

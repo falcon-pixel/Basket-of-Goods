@@ -1,1 +1,24 @@
-<h1>Cart</h1>
+<div class="container">
+    <table class="mt-5 table">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Item</th>
+                <th scope="col">Title</th>
+                <th scope="col">Qantity</th>
+            </tr>
+        </thead>
+        <tbody class="counter-container">
+            {{#each cartItems}}
+            <tr>
+                <td class="row-counter"></td>
+                <td><img src="/images/product-images/{{this._id}}.jpg" class="view-product-img" alt=""></td>
+                <td>{{this.name}}</td>
+                <td><button class="btn btn-primary mx-2 ">-</button>1<button class="btn btn-primary mx-2 ">+</button></td>
+                <td><a href="" class="btn btn-danger">Remove</a></td>
+            </tr>
+
+            {{/each}}
+        </tbody>
+    </table>
+</div>
