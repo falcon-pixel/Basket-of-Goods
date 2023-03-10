@@ -12,9 +12,11 @@
             {{#each cartItems}}
             <tr>
                 <td class="row-counter"></td>
+                {{#each this.products}}
                 <td><img src="/images/product-images/{{this._id}}.jpg" class="view-product-img" alt=""></td>
                 <td>{{this.name}}</td>
-                <td><button class="btn btn-primary mx-2 ">-</button>1<button class="btn btn-primary mx-2 ">+</button></td>
+                {{/each}}
+                <td><button class="btn btn-primary mx-2 ">-</button>{{this.quantity}}<button class="btn btn-primary mx-2 ">+</button></td>
                 <td><a href="" class="btn btn-danger">Remove</a></td>
             </tr>
 
