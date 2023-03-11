@@ -5,6 +5,7 @@
                 <th scope="col">No.</th>
                 <th scope="col">Item</th>
                 <th scope="col">Title</th>
+                <th scope="col">Price</th>
                 <th scope="col">Qantity</th>
             </tr>
         </thead>
@@ -12,15 +13,27 @@
             {{#each cartItems}}
             <tr>
                 <td class="row-counter"></td>
-                {{#each this.products}}
-                <td><img src="/images/product-images/{{this._id}}.jpg" class="view-product-img" alt=""></td>
-                <td>{{this.name}}</td>
-                {{/each}}
-                <td><button class="btn btn-primary mx-2 ">-</button>{{this.quantity}}<button class="btn btn-primary mx-2 ">+</button></td>
-                <td><a href="" class="btn btn-danger">Remove</a></td>
+                <td><img src="/images/product-images/{{this.product._id}}.jpg" class="view-product-img" alt=""></td>
+                <td>{{this.product.name}}</td>
+                <td>{{this.product.price}}</td>
+                <td><button class="btn btn-primary mx-2"
+                        onclick="changeQuantity('{{this._id}}','{{ this.product._id}}',-1)">-</button><span
+                        id="{{this.product._id}}">{{this.quantity}}</span><button class="btn btn-primary mx-2 "
+                        onclick="changeQuantity('{{this._id}}','{{ this.product._id}}',1)">+</button></td>
+                <td><button class="btn btn-danger"
+                        onclick="deleteCartProduct('{{this._id}}', '{{this.product._id}}')">Remove</button></td>
             </tr>
 
             {{/each}}
         </tbody>
     </table>
+    <hr>
+    <div class="float-end">
+        <h3 class=" me-5 mt-3">Total: Rs.{{total}}</h3>
+        <a href="/place-order" class="float-right btn btn-outline-primary">Place Order</a>
+    </div>
 </div>
+
+<script>
+
+</script>

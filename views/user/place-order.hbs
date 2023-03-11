@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Enter Delivery Address</h1>
+    <form action="">
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address">
+                </div>
+                <div class="mb-3">
+                    <label for="">Pincode</label>
+                    <input type="number" name="pincode" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Mobile</label>
+                    <input type="number" name="mobile" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4 border border-dark">
+                <h2 class="">Total Amount: Rs {{total}}</h2>
+                <hr>
+                <div class="my-2 ms-2">
+                    <h3>Payment Method</h3>
+                    <div class="mb-2">
+                        <input type="radio" class="form-check-input" name="payment">
+                        <label for="">COD</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="radio" class="form-check-input" name="payment">
+                        <label for="">Online</label>
+                    </div>
+                    <button class="btn btn-primary float-end">Place Order</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
