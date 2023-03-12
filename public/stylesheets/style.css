@@ -35,3 +35,21 @@ header{
     height: 5rem;
     width: 5rem;
 }
+
+.img-card-view{
+    width: 100%;
+    height: 12rem;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.counter-container{
+    counter-reset: products;
+}
+
+.row-counter::before{
+    content: counter(products);
+    counter-increment: products;
+}

@@ -18,7 +18,7 @@ const connect = async (cb) => {
     // connecting to mongodb
     await client.connect();
     // setting up database name to the connected client
-    const db =await client.db(dbName);
+    const db = await client.db(dbName);
     // setting up database name to the state
     state.db = db;
     // callback after connected
